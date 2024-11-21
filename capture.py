@@ -8,10 +8,10 @@ import io
 import os
 import scipy.io.wavfile
 import argparse
+from constants import DEFAULT_TARGET_FOLDER_PATH
 
 DEFAULT_DURATION = 2
 FREQUENCY = 16000
-DEFAULT_TARGET_FOLDER_PATH = "raw"
 DEFAULT_FILE_FORMAT = "mp3"
 
 sd.default.samplerate = FREQUENCY
@@ -28,7 +28,7 @@ def save_word_sound(
         sound = pydub.AudioSegment.from_wav(wav_io)
         sound.export(file_path, format=file_format)
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-w", "--words", type=str)
     args = parser.parse_args()
@@ -45,4 +45,7 @@ if __name__ == "__main__":
         file_name = f"{word}.{DEFAULT_FILE_FORMAT}"
         file_path = os.path.join(DEFAULT_TARGET_FOLDER_PATH, file_name)
         save_word_sound(file_path, word, word_sound)
+
+if __name__ == "__main__":
+    main()
         
