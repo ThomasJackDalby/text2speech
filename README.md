@@ -28,10 +28,16 @@ python -m venv .venv
 .venv/scripts/activate
 ```
 
-Install the required packages:
+Install the required packages.
 
 ```
 pip install -r ./requirements.txt
+```
+
+Note, pydub requires a 3rd party sound processing application such as ffmpeg, which is not installed automatically alongside the python module. Refer to the pydub project page for more info. If you choose to use ffmpeg, you can easily install it with chocolatey.
+
+```
+choco install ffmpeg-full
 ```
 
 ## Recording a voice
@@ -42,3 +48,5 @@ Before a phrase can be generated, the building block word sound bites need to be
 2. Record a large set of common words up-front.
 
 [1000-most-common-words.txt](https://raw.githubusercontent.com/powerlanguage/word-lists/refs/heads/master/1000-most-common-words.txt)
+
+

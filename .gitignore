@@ -1,6 +1,9 @@
 raw/
 processed/
 .venv/
+__pycache__/
+
+**/*.pyc
 
 **/missing_words.json
 **/*.png
